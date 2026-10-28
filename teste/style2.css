@@ -1,0 +1,16 @@
+body{
+    background-color: #444;
+}
+
+.divider {
+  position: relative;
+  text-align: center;
+  border-bottom: 1px solid #929292; /* Cor da linha */
+  line-height: 0.1em;
+  margin: 20px 0;
+}
+
+.divider .title {
+  background: #444; /* Mesma cor do fundo da página */
+  padding: 0 10px;  /* Espaço para cobrir a linha nas laterais */
+}
