@@ -7,13 +7,15 @@
     <link rel="stylesheet" href="css/style3.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
+    <link rel="icon" type="image/svg+xml" href="../files/svg/ícone.svg">
 </head>
 <body>
 
 <!-- BARRA DE NAVEGAÇÃO: logo, links e avatar -->
 <header class="nav">
-  <a class="logo" href="#" aria-label="Fixly">
+  <a class="logo" href="" aria-label="Fixly">
     <svg width="22" height="28" viewBox="0 0 22 28" aria-hidden="true"><path d="M13 0 2 16h7l-3 12L20 10h-8z" fill="#f5c542"/></svg>
+    
     <span>Fixly</span>
   </a>
   <nav class="links">
@@ -45,6 +47,7 @@
       <div class="kpi total"><small>Total OS</small><b id="kTotal"></b></div>
       <div class="kpi verde"><small>Rendimento líquido</small><b id="kRend"></b></div>
     </div>
+
     <div class="col">
       <div class="mini verde"><small>Novas entradas</small><b id="kNovas"></b></div>
       <div class="mini amarelo"><small>Andamento</small><b id="kAnd"></b></div>
@@ -75,7 +78,6 @@
         <div class="box"><canvas id="pie" role="img" aria-label="Pedidos por categoria"></canvas></div>
         <div id="legend"></div>
       </div>
-      <button class="tog" id="tog" type="button">Ver como rosca</button>
     </article>
   </section>
 
