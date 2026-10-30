@@ -1,0 +1,77 @@
+/* ===== CORES E VARIÁVEIS =====
+   Aqui ficam as cores do painel. Mudou uma, muda em todo o site. */
+:root{
+  --bg:#e9ecf1;      /* fundo da página (tema claro) */
+  --card:#fafafa;    /* fundo dos cartões brancos */
+  --ink:#2b2b2b;     /* cor do texto */
+  --mute:#8a8f98;    /* cinza para textos secundários */
+  --grid:#e3e5e9;    /* linhas de grade e bordas leves */
+  --dark:#16181d;    /* fundo do cartão de orçamentos */
+  --gold:#f5b82e;    /* amarelo: borda de orçamentos e foco do teclado */
+  box-sizing:border-box;
+  /* Evita que o conteúdo fique atrás da barra do celular (notch) */
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+
+/* ===== TEMA ESCURO =====
+   Se o aparelho estiver no modo escuro, o fundo da página fica preto */
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#000;color-scheme:dark}
+}
+/* Permite forçar o tema escuro colocando data-theme="dark" no <html> */
+:root[data-theme="dark"]{--bg:#000;color-scheme:dark}
+
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+
+/* ===== PÁGINA ===== */
+body{
+  margin:0;
+  background:var(--bg);
+  font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace; /* fonte estilo "código" */
+  color:var(--ink);
+}
+/* Coluna central com largura máxima de celular e espaço entre os cartões */
+main{max-width:420px;margin:0 auto;padding:24px 16px;display:grid;gap:24px}
+
+/* ===== CARTÕES ===== */
+.card{background:var(--card);border-radius:18px;padding:16px 18px}
+/* Título de cada cartão (VENDAS, ORÇAMENTOS, PEDIDOS) */
+h2{margin:0 0 10px;text-align:center;font:800 14px/1 system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase}
+
+/* ===== FILTROS DO GRÁFICO DE LINHAS ===== */
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+/* Cada botão de mês (bolinha colorida + nome) */
+.chip{border:0;background:none;cursor:pointer;font:inherit;font-size:12px;color:var(--ink);display:flex;align-items:center;gap:6px;padding:4px 6px;border-radius:8px}
+/* Contorno amarelo ao navegar pelo teclado (acessibilidade) */
+.chip:focus-visible,.row:focus-visible,.tog:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+/* A bolinha usa a cor passada pelo script.js na variável --c */
+.chip i,.row i{width:10px;height:10px;border-radius:50%;display:inline-block;background:var(--c)}
+/* Item desligado: fica apagado e riscado */
+.chip.off,.row.off{opacity:.35;text-decoration:line-through}
+
+/* Área onde o gráfico é desenhado (altura fixa) */
+.box{position:relative;height:200px}
+
+/* ===== CARTÃO DE ORÇAMENTOS ===== */
+.orc{background:var(--dark);border:2px solid var(--gold);color:#fff}
+.orc h2{color:#fff}
+/* Três números lado a lado */
+.nums{display:flex;justify-content:space-around;text-align:center}
+.nums b{display:block;font:800 34px/1.1 system-ui,sans-serif}   /* o número grande */
+.nums span{font:600 13px system-ui,sans-serif;color:#ffe9a8;text-transform:uppercase} /* o rótulo */
+
+/* ===== CARTÃO DE PEDIDOS ===== */
+/* Duas colunas: gráfico à esquerda, legenda à direita */
+.pie{display:grid;grid-template-columns:140px 1fr;gap:14px;align-items:center}
+.pie .box{height:140px}
+/* Cada linha da legenda (bolinha, nome, valor) */
+.row{display:flex;align-items:center;gap:8px;width:100%;border:0;background:none;font:inherit;font-size:11px;color:var(--ink);padding:5px 4px;cursor:pointer;text-align:left;border-radius:6px}
+.row span{flex:1}                 /* nome ocupa o espaço do meio */
+.row em{font-style:normal}        /* valor à direita, sem itálico */
+/* Botão "Ver como rosca / pizza" */
+.tog{margin:10px auto 0;display:block;border:1px solid var(--grid);background:none;color:var(--ink);font:inherit;font-size:12px;padding:6px 12px;border-radius:999px;cursor:pointer}
+
+/* Em telas muito estreitas, a legenda vai para baixo do gráfico */
+@media (max-width:360px){.pie{grid-template-columns:1fr}.pie .box{margin:auto}}
