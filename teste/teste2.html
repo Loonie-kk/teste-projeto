@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dashboard</title>
+    <link rel="stylesheet" href="style3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<section class="card">
+    <h2>Vendas</h2>
+    <div class="chips" id="chips"></div>
+    <div class="box">
+    <canvas id="line" role="img" aria-label="Vendas por dia da semana"></canvas>
+    </div>
+  </section>
+ 
+  <section class="card orc">
+    <h2>Orçamentos</h2>
+    <div class="nums">
+      <div><b style="color:#4a6cf7" id="n1"></b><span>Novos</span></div>
+      <div><b style="color:#e0443a" id="n2"></b><span>Negados</span></div>
+      <div><b style="color:#43b02a" id="n3"></b><span>Aprovados</span></div>
+    </div>
+  </section>
+ 
+  <section class="card">
+    <h2>Pedidos</h2>
+    <div class="pie">
+      <div class="box"><canvas id="pie" role="img" aria-label="Pedidos por categoria"></canvas></div>
+      <div id="legend"></div>
+    </div>
+  </section>
+
+  <script src="dashboard.js"></script>
+
+</main>
+</body>
+</html>

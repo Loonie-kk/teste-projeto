@@ -1,0 +1,31 @@
+:root{--bg:#e9ecf1;--card:#fafafa;--ink:#2b2b2b;--mute:#8a8f98;--grid:#e3e5e9;--dark:#16181d;--gold:#f5b82e;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#000;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#000;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;color:var(--ink)}
+main{max-width:420px;margin:0 auto;padding:24px 16px;display:grid;gap:24px}
+.card{background:var(--card);border-radius:18px;padding:16px 18px}
+h2{margin:0 0 10px;text-align:center;font:800 14px/1 system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+.chip{border:0;background:none;cursor:pointer;font:inherit;font-size:12px;color:var(--ink);display:flex;align-items:center;gap:6px;padding:4px 6px;border-radius:8px}
+.chip:focus-visible,.row:focus-visible,.tog:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.chip i,.row i{width:10px;height:10px;border-radius:50%;display:inline-block;background:var(--c)}
+.chip.off,.row.off{opacity:.35;text-decoration:line-through}
+.box{position:relative;height:200px}
+.orc{background:var(--dark);border:2px solid var(--gold);color:#fff}
+.orc h2{color:#fff}
+.nums{display:flex;justify-content:space-around;text-align:center}
+.nums b{display:block;font:800 34px/1.1 system-ui,sans-serif}
+.nums span{font:600 13px system-ui,sans-serif;color:#ffe9a8;text-transform:uppercase}
+.pie{display:grid;grid-template-columns:140px 1fr;gap:14px;align-items:center}
+.pie .box{height:140px}
+.row{display:flex;align-items:center;gap:8px;width:100%;border:0;background:none;font:inherit;font-size:11px;color:var(--ink);padding:5px 4px;cursor:pointer;text-align:left;border-radius:6px}
+.row span{flex:1}.row em{font-style:normal}
+.tog{margin:10px auto 0;display:block;border:1px solid var(--grid);background:none;color:var(--ink);font:inherit;font-size:12px;padding:6px 12px;border-radius:999px;cursor:pointer}
+
+@media (max-width:360px){
+    .pie{grid-template-columns:1fr}.pie 
+    .box{margin:auto}
+}
