@@ -1,3 +1,8 @@
+const formatado = new Intl.NumberFormat('pt-BR', {
+  style: 'currency',
+  currency: 'BRL'
+}).format(7890.25); // "R$ 7.890,25"
+
 // ===== 1. DADOS: troque aqui pelos seus valores =====
 const DATA = {
   perfil: "Gerente",   // ou "Vendedor"
